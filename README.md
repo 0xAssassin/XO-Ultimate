@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/logo.jpeg" width="120" alt="XO Ultimate logo">
+  <img src="logo.jpeg" width="120" alt="XO Ultimate logo">
 </p>
 
 <h1 align="center">XO Ultimate</h1>
