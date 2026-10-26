@@ -1,112 +1,79 @@
 <p align="center">
-  <img src="logo.jpeg" width="120" alt="XO Ultimate logo">
+  <img src="Logo.jpeg" width="120" alt="XO Ultimate logo">
 </p>
 
 <h1 align="center">XO Ultimate</h1>
 <p align="center"><strong>Think. Play. Win.</strong></p>
-<p align="center">A neon tic-tac-toe game with AI challenges, local multiplayer, custom boards, music, and an offline Android app.</p>
+<p align="center">A neon tic-tac-toe game for your browser and Android phone.</p>
 <p align="center">
-  <a href="https://github.com/0xAssassin/XO-Ultimate/releases/download/v1/XO-Ultimate.apk">Download Android APK</a> ·
-  <a href="https://github.com/0xAssassin/XO-Ultimate/releases">Releases</a> ·
-  <a href="https://github.com/0xAssassin/XO-Ultimate/issues">Report a bug</a>
+  <a href="https://github.com/0xAssassin/XO-Ultimate/releases/download/v1/XO-Ultimate.apk"><strong>Download Android APK</strong></a>
+  · <a href="https://github.com/0xAssassin/XO-Ultimate/releases">Releases</a>
+  · <a href="https://github.com/0xAssassin/XO-Ultimate/issues">Report a bug</a>
 </p>
 
 ## About
 
-XO Ultimate takes classic tic-tac-toe beyond the 3 × 3 board. Challenge the computer or play with a friend on the same device. Choose your winning line and board size, then start the match.
-
-The website keeps a compact portrait layout on phones, PCs, and laptops. The Android app bundles the game locally for offline play.
+Play classic tic-tac-toe or try a larger board. Challenge the computer or play with a friend on the same device. Choose a winning rule, select your board, and start the game.
 
 ## Features
 
-- **VS Computer:** Easy, Medium, and Hard difficulties. Easy is selected by default.
-- **Local multiplayer:** Two players take turns on the same device.
-- **Four win rules:** Connect 3, 4, 5, or 6 marks horizontally, vertically, or diagonally.
-- **Board previews:** Swipe or use side arrows, tap a card to select, and press Start Game.
-- **Neon interface:** Custom XO artwork, highlighted moves, winning lines, and result dialogs.
-- **Audio:** Background music, tap/move effects, and separate win, loss, and draw sounds.
-- **Controls:** Volume, music, sound effects, vibration, new rounds, and score reset.
-- **Saved preferences:** Audio settings are stored locally when browser storage is available.
-- **Offline game:** Images and sounds are embedded in the HTML. Downloading the APK requires internet access.
-- **No ads:** No advertising SDK is included.
+- **VS Computer:** Easy, Medium, and Hard difficulty.
+- **Local Multiplayer:** Two players on the same device.
+- **Custom win rules:** Connect 3, 4, 5, or 6 marks in a straight line.
+- **Neon design:** Custom XO artwork, highlighted moves, and winning-line animations.
+- **Board selection:** Swipe or use the left/right arrows to explore previews.
+- **Audio controls:** Background music, tap effects, result sounds, and adjustable volume.
+- **Game controls:** New rounds, scores, and score reset.
+- **Compact layout:** A phone-style interface on mobile, PC, and laptop screens.
+- **Offline gameplay:** Game artwork and sounds are bundled locally.
+- **No ads.**
 
-## Win rules and boards
+## Win rules and board sizes
 
-| Win condition | Available boards |
+| Win rule | Available boards |
 | --- | --- |
 | 3 in a row | 3 × 3 |
 | 4 in a row | 4 × 4 or 5 × 5 |
 | 5 in a row | 9 × 9 or 11 × 11 |
 | 6 in a row | 11 × 11 |
 
-Hard difficulty uses exhaustive minimax on the classic 3 × 3 board. Larger boards use a tactical evaluator; they are not guaranteed to be unbeatable.
+Win by connecting your marks horizontally, vertically, or diagonally.
 
-## Play in a browser
+## Play in your browser
 
-1. Download or clone this repository.
-2. Open `index.html` in a modern browser with JavaScript enabled.
-3. Choose VS Computer or Local Multiplayer.
-4. Select a win rule, continue to board selection, choose a board, and press Start Game.
+1. Download the game's HTML file from this repository.
+2. Open it in a modern browser with JavaScript enabled.
+3. Choose **VS Computer** or **Local Multiplayer**.
+4. Select a win rule and press **Choose Board Size**.
+5. Select your board and press **Start Game**.
 
-The web game needs no package installation, build step, server, or API key. Browser audio starts after interaction. If sound is silent, tap the **♪** button in the header or **Enable & Test Sound** in Settings. Check device media volume and site audio permissions if necessary.
+No installation or build setup is needed for the browser game. On the latest website version, tap the **♪** button to enable music and sound. Audio preferences can also be changed in Settings.
 
-## Install on Android
+## Download for Android
 
-1. Download [XO-Ultimate.apk](https://github.com/0xAssassin/XO-Ultimate/releases/download/v1/XO-Ultimate.apk).
-2. Open the downloaded file on your Android phone.
-3. If Android asks, allow installation from the browser or file manager used to open it.
+[**Download XO-Ultimate.apk**](https://github.com/0xAssassin/XO-Ultimate/releases/download/v1/XO-Ultimate.apk)
+
+1. Download the APK on your Android phone.
+2. Open the downloaded file.
+3. Allow installation from your browser or file manager if Android asks.
 4. Install and launch **XO Ultimate**.
 
-**Minimum version:** Android 8.0 / API 26. The app uses the device's Android WebView; an updated WebView is recommended. The only declared app permission is vibration.
+**Requires Android 8.0 or later.** Gameplay works offline; downloading the APK requires an internet connection.
 
-An APK is an Android application. PCs and laptops can play the browser version or download the APK to transfer to an Android device.
+PC and laptop users can play the HTML version. The APK is for Android devices.
 
-## Website and APK versions
+## Repository contents
 
-The `v1` APK is the first Android build. The root `index.html` includes subsequent website fixes for mobile audio and background APK downloads. The public Android source under `android/` matches the initial APK's bundled game; it does not automatically update when the website changes.
+- **Logo image:** XO Ultimate branding.
+- **HTML file:** The browser game, with embedded artwork and sounds.
+- **GitHub Releases:** Downloadable Android APK.
 
-To ship website changes inside a new APK, update `android/assets/index.html`, increment the Android version, and rebuild using the original private signing key. See [Android build instructions](android/README.md).
+The Android download is published as a release asset. Later website changes are not automatically included in an already published APK.
 
-## Repository layout
+## Feedback
 
-```text
-index.html               Browser game, with embedded artwork and audio
-android/                 Native Android wrapper and original v1 game asset
-  src/                   Java Activity
-  res/                   App icon and Android theme
-  assets/index.html      Game bundled in Android v1
-  AndroidManifest.xml    Package metadata and permissions
-  build.sh               Android build script
-  README.md              Build and signing instructions
-docs/assets/logo.jpeg    README artwork
-CHANGELOG.md             Website and Android version history
-RELEASE_NOTES.md         Release description for Android v1
-CONTRIBUTING.md          Contribution and bug-report guidelines
-GITHUB_SETUP.md          Repository upload checklist
-```
-
-## Downloads
-
-The website's download button uses the GitHub release asset:
-
-```text
-https://github.com/0xAssassin/XO-Ultimate/releases/download/v1/XO-Ultimate.apk
-```
-
-When publishing a new APK, upload it as a release asset and update `githubReleaseUrl` in the `apk-download-config` block of `index.html`. Keep the private signing backup out of the repository and release assets.
-
-## Privacy
-
-The supplied game source does not include analytics or advertising integrations. Audio preferences stay in local browser/WebView storage. GitHub handles requests to download the APK.
-
-## Contributing
-
-Bug reports and suggestions are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening an issue or pull request.
-
-## License
-
-No license has been selected for this repository. A license file can be added separately by the repository owner.
+Found a problem or have an idea? [Open an issue](https://github.com/0xAssassin/XO-Ultimate/issues) with your device, browser or app version, and the steps to reproduce it.
 
 ---
 
-Maintained by [0xAssassin](https://github.com/0xAssassin).
+Created by [0xAssassin](https://github.com/0xAssassin).
